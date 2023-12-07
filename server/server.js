@@ -33,7 +33,7 @@ app.use(passport.session());
 
 app.use(
   cors({
-    origin: "https://keeper200.vercel.app",
+    origin: "https://keeper-client.onrender.com",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -730,7 +730,7 @@ app.get("/auth/login/success", async (req, res) => {
 
 app.get("/auth/logout", (req, res) => {
   req.logout();
-  res.redirect("https://keeper200.vercel.app/home");
+  res.redirect("https://keeper-client.onrender.com/home");
 });
 
 app.get(
@@ -741,8 +741,8 @@ app.get(
 app.get(
   "/auth/google/home",
   passport.authenticate("google", {
-    successRedirect: "https://keeper200.vercel.app/home",
-    failureRedirect: "https://keeper200.vercel.app/login",
+    successRedirect: "https://keeper-client.onrender.com/home",
+    failureRedirect: "https://keeper-client.onrender.com/login",
   })
 );
 
